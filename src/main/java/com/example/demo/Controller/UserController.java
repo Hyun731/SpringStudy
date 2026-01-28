@@ -13,6 +13,6 @@ public class UserController {
     private final UserService userService;
     @PostMapping("/post")
     public String CreateUser(@RequestBody UserCreateRequest userCreateRequest){
-        return userService.SignUp(userCreateRequest);
+        return userService.signUp(userCreateRequest);
     }
 }
