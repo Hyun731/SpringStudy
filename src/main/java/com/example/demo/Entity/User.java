@@ -13,15 +13,15 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increments
-    private int id;
-    private String user_id;
+    private Integer id;
+    private String userId;
     private String email;
     private String password;
     private LocalDateTime created_at;
 
-    public static User create(String user_id,String email, String password) {
+    public static User create(String userId,String email, String password) {
         User user = new User();
-        user.user_id = user_id;
+        user.userId = userId;
         user.email = email;
         user.password = password;
         user.created_at = LocalDateTime.now();
