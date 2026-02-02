@@ -13,4 +13,9 @@ public class GlobalExceptionHandler {
         ErrorResponse error = new ErrorResponse(e.getMessage(), "NotFound404");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
+    @ExceptionHandler(AlreadyExist.class)
+    public ResponseEntity<ErrorResponse> handleAlreadyExist(AlreadyExist e) {
+        ErrorResponse error = new ErrorResponse(e.getMessage(), "400");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
 }

@@ -21,20 +21,4 @@ public class UserController {
     public User Login(@RequestBody UserLoginRequest userLoginRequest){
         return userService.Login(userLoginRequest);
     }
-
-    @GetMapping("/test")
-    public String Test(){
-        System.out.println(userService.getClass().getName());
-        return userService.Test();
-    }
-    @GetMapping("/self")
-    public String Self(){
-        System.out.println(userService.getClass().getName());
-        return userService.outMethod();
-    }
-    @GetMapping("/testError")
-    public String testError() {
-        System.out.println(userService.getClass().getName() );
-        throw new ResourceNotFound("테스트 에러");
-    }
 }
